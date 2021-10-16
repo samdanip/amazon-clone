@@ -1,0 +1,148 @@
+import React from 'react'
+import styled from 'styled-components'
+import SearchIcon from '@mui/icons-material/Search';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
+import { Link } from "react-router-dom";
+
+function Header() {
+    return (
+        <Container>
+            {/* Styled Components - npm i styled-components */}
+            <HeaderLogo>
+                <Link to="/">
+                    <img src={"https://i.imgur.com/7I9Was5.png"} alt="logo"/>
+                </Link>
+            </HeaderLogo>
+
+            <HeaderOptionAddress>
+                <RoomOutlinedIcon/>
+                <HeaderOption>
+                    <OptionLineOne>Hello</OptionLineOne>
+                    <OptionLineTwo>Select your address</OptionLineTwo>
+                </HeaderOption>
+            </HeaderOptionAddress>
+
+            <HeaderSearch>
+                <HeaderSearchInput type="text" />
+                <HeaderSearchIconContainer>
+                    <SearchIcon/>
+                </HeaderSearchIconContainer>
+            </HeaderSearch>
+
+            <HeaderNavItems>
+                <HeaderOption>
+                    <OptionLineOne>Hello, Sam</OptionLineOne>
+                    <OptionLineTwo>Account & Lists</OptionLineTwo>
+                </HeaderOption>
+
+                <HeaderOption>
+                    <OptionLineOne>Returns</OptionLineOne>
+                    <OptionLineTwo>& Orders</OptionLineTwo>
+                </HeaderOption>
+
+                
+                <HeaderOptionCart>
+                    <Link to="/cart">
+                        <ShoppingBasketIcon/>
+                        <CartCount>0</CartCount>
+                    </Link>
+                </HeaderOptionCart>
+
+            </HeaderNavItems>
+        </Container>
+    )
+}
+
+export default Header
+
+const Container = styled.div`
+    height: 60px;
+    background-color: #0F1111;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    font-size: 13px;
+`
+
+const HeaderLogo = styled.div`
+    img {
+        width: 100px;
+        margin-left: 11px;
+    }
+`
+
+const HeaderOptionAddress = styled.div`
+    padding-left: 9px;
+    display: flex;
+    align-items: center;
+`
+
+const OptionLineOne = styled.div`
+    font-size: 12px;
+`
+
+const OptionLineTwo = styled.div`
+    font-size: 14px;
+    font-weight: bold;
+`
+
+const HeaderSearch = styled.div`
+    display: flex;
+    flex-grow: 1;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: 4px;
+    background-color: white;
+
+    :focus-within {
+        box-shadow: 0 0 0 3px #F90;
+    }
+`
+
+const HeaderSearchInput = styled.input`
+    flex-grow: 1;
+    border: 0;
+
+    :focus {
+        outline: none;
+    }
+`
+
+const HeaderSearchIconContainer = styled.div`
+    background-color: #febd69;
+    width: 45px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const HeaderNavItems = styled.div`
+    display: flex;
+`
+
+const HeaderOption = styled.div`
+    // top left
+    padding: 10px 9px; 
+`
+
+const HeaderOptionCart = styled.div`
+    display: flex;
+
+    a {
+        display: flex;
+        align-items: center;
+        padding-right: 15px;
+        color: white;
+        text-decoration: none;
+    }
+`
+
+const CartCount = styled.div`
+    color: #febd69;
+    padding-left: 4px;
+    font-size: 16px;
+`
