@@ -6,7 +6,7 @@ function Product() {
         <Container>
             <Title>IPad Pro</Title>
             <Price>Rs. 2499.00</Price>
-            <Rating>⭐⭐⭐⭐⭐</Rating>
+            <Rating>⭐ ⭐ ⭐ ⭐ ⭐</Rating>
             <Image src='https://images-eu.ssl-images-amazon.com/images/I/41sqo47iRLL._SY445_SX342_QL70_FMwebp_.jpg' alt='IPad'/>
             <Actionsection>
                 <AddToCartButton>Add to Cart</AddToCartButton>
